@@ -1,5 +1,5 @@
 import './App.css';
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import { birdnames } from './birdnames'
 
 class BirdImage extends Component {
@@ -54,6 +54,28 @@ class QuizButton extends Component {
     );
   }
 }
+
+// class Fibonacci extends Component {
+//   state = { fibonacci: ''}
+
+//   fetchData = () => {
+//     return fetch("https://k7xhurqu49.execute-api.eu-west-1.amazonaws.com/default/function")
+//           .then((response) => response.json())
+//           .then((data) => this.setState({ fibonacci: data}));
+//   }
+
+//   componentDidMount() {
+//     this.fetchData();
+//   }
+
+//   render() {
+//     return(
+//       <div>
+//         {this.state.fibonacci}
+//       </div>
+//     )
+//   }
+// }
 
 function App() {
   const birds = Array.from({length: 4}, () => birdnames[Math.floor(Math.random() * birdnames.length)]).flat();
