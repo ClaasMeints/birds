@@ -55,27 +55,27 @@ class QuizButton extends Component {
   }
 }
 
-// class Fibonacci extends Component {
-//   state = { fibonacci: ''}
+class Fibonacci extends Component {
+  state = { fibonacci: ''}
 
-//   fetchData = () => {
-//     return fetch("https://k7xhurqu49.execute-api.eu-west-1.amazonaws.com/default/function")
-//           .then((response) => response.json())
-//           .then((data) => this.setState({ fibonacci: data}));
-//   }
+  fetchData = () => {
+    return fetch("https://k7xhurqu49.execute-api.eu-west-1.amazonaws.com/default/function")
+          .then((response) => response.json())
+          .then((data) => this.setState({ fibonacci: data}));
+  }
 
-//   componentDidMount() {
-//     this.fetchData();
-//   }
+  componentDidMount() {
+    this.fetchData();
+  }
 
-//   render() {
-//     return(
-//       <div>
-//         {this.state.fibonacci}
-//       </div>
-//     )
-//   }
-// }
+  render() {
+    return(
+      <div>
+        {this.state.fibonacci}
+      </div>
+    )
+  }
+}
 
 function App() {
   const birds = Array.from({length: 4}, () => birdnames[Math.floor(Math.random() * birdnames.length)]).flat();
@@ -85,12 +85,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div class="container">
-          <QuizButton lettre = 'A' birdname = {birds[0]} bird = {correctBird}/>
-          <QuizButton lettre = 'B' birdname = {birds[1]} bird = {correctBird}/>
-          <QuizButton lettre = 'C' birdname = {birds[2]} bird = {correctBird}/>
-          <QuizButton lettre = 'D' birdname = {birds[3]} bird = {correctBird}/>
-          <BirdImage birdname = {correctBird}/>
-          <button class='Next' onClick={() => window.location.reload(false)} >Next Bird</button>
+        <Fibonacci/>
         </div>
       </header>
     </div>
